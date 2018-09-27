@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Tristan Secord" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+	<!-- Document Title
+	============================================= -->
+	<title>Tristan Secord</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu" class="dark">
+
+						<ul>
+							<li class="current"><a href="index.html"><div>Home</div></a></li>
+							<li class="mega-menu"><a href="#aboutme"><div>About</div></a></li>
+							<li class="mega-menu"><a href="#portfolio"><div>Portfolio</div></a></li>
+						</ul>
+
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+		<section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix">
+
+			<div class="swiper-container swiper-parent">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide dark" style="background-image: url('img/RegionsPlaceit.jpg'); background-position: center top;">
+						<div class="container clearfix">
+							<div class="slider-caption slider-caption-right">
+								<h2 data-caption-animate="fadeInUp">iOS Development</h2>
+								<p data-caption-animate="fadeInUp" data-caption-delay="200">Physiotherapy on Lakeshore</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide dark" style="background-image: url('img/MainJavaPlaceit.jpg'); background-position: center top;">
+						<div class="container clearfix">
+							<div class="slider-caption slider-caption-right">
+								<h2 data-caption-animate="fadeInUp">Android Development</h2>
+								<p data-caption-animate="fadeInUp" data-caption-delay="200">Rapid Scholar</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide dark" style="background-image: url('img/PhysioWebAboutPlaceit.jpeg'); background-position: center top;">
+						<div class="container clearfix">
+							<div class="slider-caption">
+								<h2 data-caption-animate="fadeInUp">Web Development</h2>
+								<p data-caption-animate="fadeInUp" data-caption-delay="200">Physiotherapy on Lakeshore</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide" style="background-image: url('img/NicoleLewisGalleryPlaceit.jpg');">
+						<div class="container clearfix">
+							<div class="slider-caption slider-caption-top-left">
+								<h2 data-caption-animate="fadeInUp" style="color: #808080; margin-bottom: 60px;">Web Development</h2>
+								<p data-caption-animate="fadeInUp" style="color: #808080;" data-caption-delay="200">Nicole Lewis Photography</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
+				<div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
+			</div>
+
+			<script>
+				jQuery(document).ready(function($){
+					var swiperSlider = new Swiper('.swiper-parent',{
+						paginationClickable: false,
+						slidesPerView: 1,
+						grabCursor: true,
+						loop: true,
+						onSwiperCreated: function(swiper){
+							$('[data-caption-animate]').each(function(){
+								var $toAnimateElement = $(this);
+								var toAnimateDelay = $(this).attr('data-caption-delay');
+								var toAnimateDelayTime = 0;
+								if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 750; } else { toAnimateDelayTime = 750; }
+								if( !$toAnimateElement.hasClass('animated') ) {
+									$toAnimateElement.addClass('not-animated');
+									var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+									setTimeout(function() {
+										$toAnimateElement.removeClass('not-animated').addClass( elementAnimation + ' animated');
+									}, toAnimateDelayTime);
+								}
+							});
+							SEMICOLON.slider.swiperSliderMenu();
+						},
+						onSlideChangeStart: function(swiper){
+							$('[data-caption-animate]').each(function(){
+								var $toAnimateElement = $(this);
+								var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+								$toAnimateElement.removeClass('animated').removeClass(elementAnimation).addClass('not-animated');
+							});
+							SEMICOLON.slider.swiperSliderMenu();
+						},
+						onSlideChangeEnd: function(swiper){
+							$('#slider').find('.swiper-slide').each(function(){
+								if($(this).find('video').length > 0) { $(this).find('video').get(0).pause(); }
+								if($(this).find('.yt-bg-player').length > 0) { $(this).find('.yt-bg-player').pauseYTP(); }
+							});
+							$('#slider').find('.swiper-slide:not(".swiper-slide-active")').each(function(){
+								if($(this).find('video').length > 0) {
+									if($(this).find('video').get(0).currentTime != 0 ) $(this).find('video').get(0).currentTime = 0;
+								}
+								if($(this).find('.yt-bg-player').length > 0) {
+									$(this).find('.yt-bg-player').getPlayer().seekTo( $(this).find('.yt-bg-player').attr('data-start') );
+								}
+							});
+							if( $('#slider').find('.swiper-slide.swiper-slide-active').find('video').length > 0 ) { $('#slider').find('.swiper-slide.swiper-slide-active').find('video').get(0).play(); }
+							if( $('#slider').find('.swiper-slide.swiper-slide-active').find('.yt-bg-player').length > 0 ) { $('#slider').find('.swiper-slide.swiper-slide-active').find('.yt-bg-player').playYTP(); }
+
+							$('#slider .swiper-slide.swiper-slide-active [data-caption-animate]').each(function(){
+								var $toAnimateElement = $(this);
+								var toAnimateDelay = $(this).attr('data-caption-delay');
+								var toAnimateDelayTime = 0;
+								if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 300; } else { toAnimateDelayTime = 300; }
+								if( !$toAnimateElement.hasClass('animated') ) {
+									$toAnimateElement.addClass('not-animated');
+									var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+									setTimeout(function() {
+										$toAnimateElement.removeClass('not-animated').addClass( elementAnimation + ' animated');
+									}, toAnimateDelayTime);
+								}
+							});
+						}
+					});
+
+					$('#slider-arrow-left').on('click', function(e){
+						e.preventDefault();
+						swiperSlider.swipePrev();
+					});
+
+					$('#slider-arrow-right').on('click', function(e){
+						e.preventDefault();
+						swiperSlider.swipeNext();
+					});
+				});
+			</script>
+		</section>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap" id="aboutme" style="padding: 0px">
+
+				<div class="container clearfix">
+					<div class="row clearfix">
+
+						<div class="col-lg-12">
+							<div class="section topmargin nobottommargin nobottomborder" style="background-color: #FFF;">
+								<div class="container clearfix">
+									<div class="heading-block center nomargin">
+										<h3>About Me</h3>
+									</div>
+								</div>
+							</div>
+
+							<div class="row clearfix">
+								<div class="col-lg-6">
+
+									<p class="lead">I am deeply passionate and driven about this industry which makes me exceptionally hardworking, and frequently results in taking on side projects while working full time. My propensity for continuous learning and improvement motivates me to undertake numerous self education projects like teaching myself Objective-C and Ruby on Rails. I am tenacious and persistent in looking for practical solutions to various problems, intrigued by the design and implementation of concise and efficient algorithms.</p>
+								</div>
+								<div class="col-lg-4" style="float: right;">
+									<h4 class="center">Skills</h4>
+									<table class="table table-striped">
+									    <thead>
+									      <tr>
+									        <th class="center">Languages</th>
+									        <th class="center">Tech Skills</th>
+									      </tr>
+									    </thead>
+									    <tbody>
+									      <tr>
+									        <td>C/C++</td>
+									        <td>Visual Studio</td>
+									      </tr>
+									      <tr>
+									        <td>Objective-C</td>
+									        <td>GitHub</td>
+									      </tr>
+									      <tr>
+									        <td>VB.net</td>
+									        <td>Eclipse</td>
+									      </tr>
+									      <tr>
+									        <td>HTML</td>
+									        <td>Xcode</td>
+									      </tr>
+									      <tr>
+									        <td>SQL</td>
+									        <td>Microsoft SQL Server</td>
+									      </tr>
+									      <tr>
+									        <td>Java/Javascript</td>
+									        <td>Appcelerator</td>
+									      </tr>
+									      <tr>
+									        <td>Ruby on Rails</td>
+									        <td>Unix</td>
+									      </tr>
+									    </tbody>
+									</table>	
+								</div>		
+							</div>					
+						</div>
+					</div>
+				</div>
+
+				<div class="section topmargin nobottommargin nobottomborder">
+					<div class="container clearfix">
+						<div class="heading-block center nomargin">
+							<h3>My Portfolio</h3>
+						</div>
+					</div>
+				</div>
+
+				<div id="portfolio" class="portfolio-nomargin portfolio-notitle portfolio-full clearfix row" style="padding-bottom: 0;">			
+					<article class="portfolio-item pf-media pf-icons">
+						<div class="portfolio-image">
+							<a href="IOSPhysio.html">
+								<img src="img/PhysioAppLogo.png" alt="Physio App Logo" style="height: 100px;">
+							</a>
+							<div class="portfolio-overlay">
+								<a href="IOSPhysio.html" class="center-icon"><i class="icon-line-ellipsis"></i></a>
+							</div>
+						</div>
+						<div class="portfolio-desc">
+							<h3><a href="IOSPhysio.html">Physiotherapy on Lakeshore</a></h3>
+							<span><a href="IOSPhysio.html">iOS Development</a></span>
+						</div>
+					</article>
+					<article class="portfolio-item pf-illustrations">
+						<div class="portfolio-image">
+							<a href="RapidScholar.html">
+								<img src="img/LazyScholarLogo.jpg" alt="Lazy Scholar Logo">
+							</a>
+							<div class="portfolio-overlay">
+								<a href="RapidScholar.html" class="center-icon"><i class="icon-line-ellipsis"></i></a>
+							</div>
+						</div>
+						<div class="portfolio-desc">
+							<h3><a href="RapidScholar.html">Rapid Scholar</a></h3>
+							<span><a href="RapidScholar.html">Android Development</a></span>
+						</div>
+					</article>
+
+					<article class="portfolio-item pf-graphics pf-uielements">
+						<div class="portfolio-image" style="background-color: #808080">
+							<a href="NicoleLewis.html">
+								<img src="img/NicoleLewisLogo.png" alt="Nicole Lewis Logo">
+							</a>
+							<div class="portfolio-overlay">
+								<a href="NicoleLewis.html" class="center-icon"><i class="icon-line-ellipsis"></i></a>
+							</div>
+						</div>
+						<div class="portfolio-desc">
+							<h3><a href="NicoleLewis.html">Nicole Lewis Photography</a></h3>
+							<span><a href="NicoleLewis.html">Web Development</a></span>
+						</div>
+					</article>
+
+					<article class="portfolio-item pf-icons pf-illustrations">
+						<div class="portfolio-image">
+							<a href="PhysioWeb.html">
+								<img src="img/PhysioWebLogo.jpg" alt="Open Imagination">
+							</a>
+							<div class="portfolio-overlay" data-lightbox="gallery">
+								<a href="PhysioWeb.html" class="center-icon"><i class="icon-line-ellipsis"></i></a>
+							</div>
+						</div>
+						<div class="portfolio-desc">
+							<h3><a href="PhysioWeb.html">Physiotherapy on Lakeshore</a></h3>
+							<span><a href="PhysioWeb.html">Web Development</a></span>
+						</div>
+					</article>
+
+				</div>
+				<div class="clear"></div>
+			</div>
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half col_last tright" style="float: right;">
+						<div class="fright clearfix">
+							<a href="#" class="social-icon si-small si-borderless si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-github">
+								<i class="icon-github"></i>
+								<i class="icon-github"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-linkedin">
+								<i class="icon-linkedin"></i>
+								<i class="icon-linkedin"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-email3">
+								<i class="icon-envelope2"></i>
+								<i class="icon-envelope2"></i>
+							</a>
+						</div>
+
+						<div class="clear"></div>
+
+						<i class="icon-envelope2"></i> tristan.secord@gmail.com <span class="middot">&middot;</span> <i class="icon-phone"></i> 613-541-8083
+					</div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="js/functions.js"></script>
+
+</body>
+</html>
