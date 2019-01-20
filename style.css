@@ -546,7 +546,8 @@ body.stretched .container-fullwidth {
 .fslider .slide > img,
 .fslider .slide > a > img {
 	position: relative;
-	display: block;
+    vertical-align: middle;
+	display: inline-block;
 	width: 100%;
 	height: auto;
 	overflow: hidden;

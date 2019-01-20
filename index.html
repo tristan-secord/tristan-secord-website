@@ -17,6 +17,7 @@
 
 	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
 	<!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 	<![endif]-->
@@ -56,6 +57,7 @@
 							<li class="current"><a href="index.html"><div>Home</div></a></li>
 							<li class="mega-menu"><a href="#aboutme"><div>About</div></a></li>
 							<li class="mega-menu"><a href="#portfolio"><div>Portfolio</div></a></li>
+              <li class="mega-menu"><a href="files/Tristan Secord Resume.pdf" download><div>Resume</div></a></li>
 						</ul>
 
 					</nav><!-- #primary-menu end -->
@@ -70,11 +72,12 @@
 
 			<div class="swiper-container swiper-parent">
 				<div class="swiper-wrapper">
+          <div class="swiper-slide dark" style="background-image: url('img/SkiyPlaceItMain_2.png'); background-position: center top;"></div>
+          <div class="swiper-slide dark" style="background-image: url('img/MifiPlaceIt_Main.png'); background-position: center top;"></div>
 					<div class="swiper-slide dark" style="background-image: url('img/RegionsPlaceit.jpg'); background-position: center top;">
 						<div class="container clearfix">
 							<div class="slider-caption slider-caption-right">
 								<h2 data-caption-animate="fadeInUp">iOS Development</h2>
-								<p data-caption-animate="fadeInUp" data-caption-delay="200">Physiotherapy on Lakeshore</p>
 							</div>
 						</div>
 					</div>
@@ -82,7 +85,6 @@
 						<div class="container clearfix">
 							<div class="slider-caption slider-caption-right">
 								<h2 data-caption-animate="fadeInUp">Android Development</h2>
-								<p data-caption-animate="fadeInUp" data-caption-delay="200">Rapid Scholar</p>
 							</div>
 						</div>
 					</div>
@@ -90,15 +92,6 @@
 						<div class="container clearfix">
 							<div class="slider-caption">
 								<h2 data-caption-animate="fadeInUp">Web Development</h2>
-								<p data-caption-animate="fadeInUp" data-caption-delay="200">Physiotherapy on Lakeshore</p>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide" style="background-image: url('img/NicoleLewisGalleryPlaceit.jpg');">
-						<div class="container clearfix">
-							<div class="slider-caption slider-caption-top-left">
-								<h2 data-caption-animate="fadeInUp" style="color: #808080; margin-bottom: 60px;">Web Development</h2>
-								<p data-caption-animate="fadeInUp" style="color: #808080;" data-caption-delay="200">Nicole Lewis Photography</p>
 							</div>
 						</div>
 					</div>
@@ -114,6 +107,10 @@
 						slidesPerView: 1,
 						grabCursor: true,
 						loop: true,
+						autoplayDisableOnInteraction: false,
+						autoplay: 7000,
+						effect: 'fade',
+                        speed: 1000,
 						onSwiperCreated: function(swiper){
 							$('[data-caption-animate]').each(function(){
 								var $toAnimateElement = $(this);
@@ -130,7 +127,7 @@
 							});
 							SEMICOLON.slider.swiperSliderMenu();
 						},
-						onSlideChangeStart: function(swiper){
+						onSlideChangeStart: function (swiper) {
 							$('[data-caption-animate]').each(function(){
 								var $toAnimateElement = $(this);
 								var elementAnimation = $toAnimateElement.attr('data-caption-animate');
@@ -204,7 +201,11 @@
 							<div class="row clearfix">
 								<div class="col-lg-6">
 
-									<p class="lead">I am deeply passionate and driven about this industry which makes me exceptionally hardworking, and frequently results in taking on side projects while working full time. My propensity for continuous learning and improvement motivates me to undertake numerous self education projects like teaching myself Objective-C and Ruby on Rails. I am tenacious and persistent in looking for practical solutions to various problems, intrigued by the design and implementation of concise and efficient algorithms.</p>
+									<p class="lead">I am deeply passionate and driven about this industry. I am hardworking, and constantly involved in side projects while working full time. 
+                                    My propensity for continuous learning and improvement motivates me to undertake numerous self education projects keeping me up to date with the latest technologies. 
+                                    I am tenacious and persistent in looking for practical solutions to various problems, intrigued by the design and implementation of concise and efficient algorithms. 
+                                    I prefer working the entire system, rather than focusing solely on the front-end or back-end. I am good at collaborating with the customer and being
+                                    involved in the development and design of the total solution.</p>
 								</div>
 								<div class="col-lg-4" style="float: right;">
 									<h4 class="center">Skills</h4>
@@ -217,32 +218,40 @@
 									    </thead>
 									    <tbody>
 									      <tr>
-									        <td>C/C++</td>
-									        <td>Visual Studio</td>
+									        <td>Ruby on Rails</td>
+									        <td>Spacemacs</td>
 									      </tr>
 									      <tr>
-									        <td>Objective-C</td>
+									        <td>Phoenix/Elixir</td>
+									        <td>MySQL</td>
+									      </tr>
+									      <tr>
+									        <td>React Native</td>
+									        <td>PostgreSQL</td>
+									      </tr>
+									      <tr>
+									        <td>Javascript</td>
 									        <td>GitHub</td>
 									      </tr>
 									      <tr>
-									        <td>VB.net</td>
-									        <td>Eclipse</td>
+									        <td>Vue.js</td>
+									        <td>GraphQL</td>
 									      </tr>
 									      <tr>
-									        <td>HTML</td>
+									        <td>Elm</td>
 									        <td>Xcode</td>
 									      </tr>
 									      <tr>
-									        <td>SQL</td>
-									        <td>Microsoft SQL Server</td>
+									        <td>HTML/HAML</td>
+									        <td>Docker</td>
 									      </tr>
-									      <tr>
-									        <td>Java/Javascript</td>
-									        <td>Appcelerator</td>
+                        <tr>
+									        <td>Swift 3</td>
+									        <td>Rancher</td>
 									      </tr>
-									      <tr>
-									        <td>Ruby on Rails</td>
-									        <td>Unix</td>
+                        <tr>
+									        <td></td>
+									        <td>Kubernetes</td>
 									      </tr>
 									    </tbody>
 									</table>	
@@ -261,7 +270,35 @@
 				</div>
 
 				<div id="portfolio" class="portfolio-nomargin portfolio-notitle portfolio-full clearfix row" style="padding-bottom: 0;">			
-					<article class="portfolio-item pf-media pf-icons">
+                    <article class="portfolio-item pf-icons pf-illustrations">
+                        <div class="portfolio-image">
+                            <a href="Skiy.html">
+                                <img src="img/SkiyBannerSmall.png" alt="Open Imagination">
+                            </a>
+                            <div class="portfolio-overlay" data-lightbox="gallery">
+                                <a href="Skiy.html" class="center-icon"><i class="icon-line-ellipsis"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-desc">
+                            <h3><a href="Skiy.html">SKiY</a></h3>
+                            <span><a href="Skiy.html">iOS Application</a></span>
+                        </div>
+                    </article>
+                    <article class="portfolio-item pf-icons pf-illustrations">
+                        <div class="portfolio-image">
+                            <a href="MiFi.html">
+                                <img src="img/MifiBannerSmall.png" alt="Open Imagination">
+                            </a>
+                            <div class="portfolio-overlay" data-lightbox="gallery">
+                                <a href="MiFi.html" class="center-icon"><i class="icon-line-ellipsis"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-desc">
+                            <h3><a href="Skiy.html">MiFi</a></h3>
+                            <span><a href="Skiy.html">iOS Application</a></span>
+                        </div>
+                    </article>
+                    <article class="portfolio-item pf-media pf-icons">
 						<div class="portfolio-image">
 							<a href="IOSPhysio.html">
 								<img src="img/PhysioAppLogo.png" alt="Physio App Logo" style="height: 100px;">
@@ -319,7 +356,6 @@
 							<span><a href="PhysioWeb.html">Web Development</a></span>
 						</div>
 					</article>
-
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -337,22 +373,22 @@
 
 					<div class="col_half col_last tright" style="float: right;">
 						<div class="fright clearfix">
-							<a href="#" class="social-icon si-small si-borderless si-facebook">
+							<a href="http://facebook.com/tristansecord" class="social-icon si-small si-borderless si-facebook">
 								<i class="icon-facebook"></i>
 								<i class="icon-facebook"></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-github">
+							<a href="http://github.com/tristan-secord" class="social-icon si-small si-borderless si-github">
 								<i class="icon-github"></i>
 								<i class="icon-github"></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-linkedin">
+							<a href="http://linkedin.com/in/tristansecord" class="social-icon si-small si-borderless si-linkedin">
 								<i class="icon-linkedin"></i>
 								<i class="icon-linkedin"></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-email3">
+							<a href="mailto:tristan.secord@gmail.com" class="social-icon si-small si-borderless si-email3">
 								<i class="icon-envelope2"></i>
 								<i class="icon-envelope2"></i>
 							</a>
